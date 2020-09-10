@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import App from '../App.vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
@@ -16,7 +15,7 @@ export function createRouter () {
         {
             path: '/login',
             name: 'login',
-            component: () => import('@/views/login.vue')
+            component: () => import(/* webpackChunkName: "login" */ '@/views/login.vue')
         }
     ]
   })

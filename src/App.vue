@@ -14,7 +14,7 @@ export default {
     components: {},
     data () {
         return {
-            test: 'hello '
+            test: '324'
         }
     },
     created () {
@@ -36,5 +36,8 @@ export default {
         height: 500px;
         background: url('~/01.jpg') no-repeat;
     }
+}
+.red {
+    color: red;
 }
 </style>

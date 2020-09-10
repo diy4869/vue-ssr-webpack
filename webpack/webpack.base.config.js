@@ -49,10 +49,11 @@ const baseConfig = {
                         loader: 'url-loader',
                         options: {
                             name: 'assets/image/[name]_[hash:8].[ext]',
-                            limit: 5120,
+                            limit: 1024 * 10,
                             publicPath: '/',
                             // outpubPath: '/assets/image/',
-                            fallback: 'file-loader'
+                            fallback: 'responsive-loader',
+                            quality: 70
                         }
                     }
                 ]
@@ -82,25 +83,25 @@ const baseConfig = {
         // enforceModuleExtension: true,
         extensions: ['.js', '.json', '.vue']
     },
-    devtool: ENV === 'development' ? 'source-map' : 'none',
+    devtool: 'source-map',
     stats: {
         source: false,
         modules: false
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: 'hello Vue SSR',
-            template: path.resolve(__dirname, '../src/page/index.html'),
-            inject: true,
-            filename: 'index.html'
-        }),
+        // new HtmlWebpackPlugin({
+        //     title: 'hello Vue SSR',
+        //     template: path.resolve(__dirname, '../src/page/index.html'),
+        //     inject: true,
+        //     filename: 'index.html'
+        // }),
         new webpack.DefinePlugin({
             'process.env': JSON.stringify(ENV)
         }),
         new vueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'assets/css/[name]_[contentHash:8].css',
-            chunkFilename: 'css/[id].css'
+            filename: '[name]_[contentHash:8].css',
+            chunkFilename: 'assets/css/[name]_[contentHash:8].css'
         })
     ]
 }
