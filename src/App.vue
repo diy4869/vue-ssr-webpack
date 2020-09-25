@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div>
-            森岛帆高 {{ test }}
+            森岛4a4帆高 {{ test }}
             <div class="img"></div>
         </div>
         <router-view></router-view>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+console.log(module.hot)
 export default {
     name: '',
     components: {},

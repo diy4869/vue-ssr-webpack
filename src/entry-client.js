@@ -32,8 +32,8 @@ router.onReady(() => {
             activated.map(Component => {
                 if (Component && Component.methods) {
                     return Component.methods.getData({
-                         store,
-                         route: to
+                        store,
+                        route: to
                      }) 
                  }
             })

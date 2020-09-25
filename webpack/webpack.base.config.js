@@ -65,10 +65,10 @@ const baseConfig = {
                         loader: 'thread-loader'
                     },
                     {
-                        loader: 'vue-loader',
-                        options: {
-                            extractCSS: ENV === 'production'
-                        }
+                        loader: 'vue-loader'
+                        // options: {
+                        //     extractCSS: ENV === 'production'
+                        // }
                     }
                     
                 ]
